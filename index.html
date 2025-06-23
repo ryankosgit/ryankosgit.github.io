@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This tag tells search engines not to index this page -->
+    <meta name="robots" content="noindex">
+    <title>Your Name - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Main body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #a0a0a0; /* Softer default text color */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Make headings and links slightly more prominent */
+        h1, h2, h3, a {
+            color: #e0e0e0;
+        }
+        
+        /* Style for the active navigation link */
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link.active,
+        .nav-link:hover {
+            color: #ffffff;
+        }
+        
+        /* Section transitions */
+        section {
+            display: none; /* Hide all sections by default */
+            animation: fadeIn 0.5s ease-in-out;
+            width: 100%;
+        }
+        
+        section.active {
+            display: block; /* Display the active section */
+        }
+        
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="w-screen h-screen flex">
+
+    <!-- Left Column: Header & Nav -->
+    <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center bg-[#111111] h-full">
+        <div class="flex flex-col items-center">
+            <!-- CUSTOMIZE: Add your headshot URL here -->
+            <img src="https://placehold.co/128x128/333333/e0e0e0?text=You" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
+            
+            <h1 class="text-2xl font-bold">Your Name</h1>
+             <!-- CUSTOMIZE: Add your location -->
+            <p class="text-sm mt-1">New York, NY</p>
+            
+            <nav class="flex flex-col space-y-3 mt-8">
+                <a href="#about" class="nav-link text-lg" onclick="showSection('about', this)">About</a>
+                <a href="#experience" class="nav-link text-lg" onclick="showSection('experience', this)">Experience</a>
+                <a href="#projects" class="nav-link text-lg" onclick="showSection('projects', this)">Projects</a>
+                <a href="#contact" class="nav-link text-lg" onclick="showSection('contact', this)">Contact</a>
+            </nav>
+        </div>
+         <footer class="absolute bottom-8 text-center text-xs text-gray-600">
+            <p>&copy; 2024 Your Name</p>
+        </footer>
+    </aside>
+
+    <!-- Right Column: Main Content -->
+    <main class="w-full md:w-2/3 lg:w-3/4 p-8 md:p-16 flex items-center justify-center h-full">
+        
+        <!-- About Section -->
+        <section id="about">
+            <div class="max-w-xl">
+                 <h2 class="text-xl font-semibold mb-4 text-white">Currently</h2>
+                <!-- CUSTOMIZE: Your about me text -->
+                 <div class="space-y-4 text-gray-300">
+                    <p>
+                        I'm pursuing opportunities at the intersection of finance and software engineering, leveraging skills in quantitative analysis and software development. 
+                    </p>
+                    <p>
+                        I just finished my degree in [Your Major] at [Your University], and I'm looking for interesting ideas to work on - please reach out!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="max-w-xl">
+                <h2 class="text-xl font-semibold mb-6 text-white">Experience</h2>
+                <div class="space-y-6">
+                    <!-- CUSTOMIZE: Add your work experience items here. -->
+                    <div class="group">
+                        <p class="text-xs text-gray-500">SUMMER 2024</p>
+                        <h3 class="font-medium mt-1">Quantitative Trading Intern &mdash; Major Hedge Fund</h3>
+                        <p class="text-sm mt-2">Developed and backtested trading strategies using Python, resulting in a potential 15% alpha. Worked with large datasets to identify market inefficiencies.</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">SUMMER 2023</p>
+                        <h3 class="font-medium mt-1">Software Engineer Intern &mdash; Tech Company</h3>
+                        <p class="text-sm mt-2">Contributed to a customer-facing web application using React and Node.js. Wrote unit tests to improve code coverage by 20%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+             <div class="max-w-xl">
+                <h2 class="text-xl font-semibold mb-6 text-white">Projects</h2>
+                 <div class="space-y-6">
+                    <!-- CUSTOMIZE: Add your project items here. -->
+                    <div class="group">
+                        <h3 class="font-medium">Algorithmic Trading Bot</h3>
+                        <p class="text-sm mt-1">A personal project to automate trading based on technical indicators, connecting to the Interactive Brokers API to execute trades.
+                        <a href="#" class="text-blue-400 hover:underline">GitHub &rarr;</a>
+                        </p>
+                    </div>
+                     <div class="group">
+                        <h3 class="font-medium">Portfolio Optimization Tool</h3>
+                        <p class="text-sm mt-1">A command-line tool that uses Modern Portfolio Theory to find the optimal asset allocation for a given set of stocks.
+                        <a href="#" class="text-blue-400 hover:underline">GitHub &rarr;</a>
+                        </p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="max-w-xl">
+                <h2 class="text-xl font-semibold mb-4 text-white">Contact</h2>
+                <p class="text-sm">
+                    You can email me at <a href="mailto:youremail@example.com" class="text-blue-400 hover:underline">youremail@example.com</a>. I'm on <a href="#" class="text-blue-400 hover:underline">GitHub</a> and on <a href="#" class="text-blue-400 hover:underline">LinkedIn</a>.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Function to switch between sections
+        function showSection(sectionId, element) {
+            // Hide all sections
+            document.querySelectorAll('main section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the target section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update active state on nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Show the 'about' section by default on page load
+        window.onload = function() {
+            document.getElementById('about').classList.add('active');
+            document.querySelector('a[href="#about"]').classList.add('active');
+        };
+    </script>
+</body>
+</html>
