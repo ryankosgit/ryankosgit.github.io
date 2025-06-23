@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- This tag tells search engines not to index this page -->
     <meta name="robots" content="noindex">
     <title>Your Name - Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Main body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
-            color: #a0a0a0; /* Softer default text color */
-            overflow: hidden; /* Prevent scrolling */
+            color: #a0a0a0; 
+            overflow: hidden; 
         }
 
-        /* Make headings and links slightly more prominent */
         h1, h2, h3, a {
             color: #e0e0e0;
         }
         
-        /* Style for the active navigation link */
         .nav-link {
             transition: color 0.3s;
         }
@@ -31,7 +27,7 @@
             color: #ffffff;
         }
         
-        /* Section transitions */
+
         section {
             display: none; /* Hide all sections by default */
             animation: fadeIn 0.5s ease-in-out;
@@ -59,7 +55,7 @@
             
             <h1 class="text-2xl font-bold">Your Name</h1>
              <!-- CUSTOMIZE: Add your location -->
-            <p class="text-sm mt-1">New York, NY</p>
+            <p class="text-sm mt-1">Economics & Computer Science Student @ Florida State University</p>
             
             <nav class="flex flex-col space-y-3 mt-8">
                 <a href="#about" class="nav-link text-lg" onclick="showSection('about', this)">About</a>
