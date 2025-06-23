@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- This tag tells search engines not to index this page -->
     <meta name="robots" content="noindex">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Ryan's Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -55,23 +55,23 @@
     <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center bg-[#111111] h-full">
         <div class="flex flex-col items-center">
             <!-- CUSTOMIZE: Add your headshot URL here -->
-            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+            <a href="#about">
                 <img src="https://placehold.co/128x128/333333/e0e0e0?text=You" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
             </a>
             
-            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+            <a href="#about">
                 <h1 class="text-2xl font-bold">Your Name</h1>
             </a>
              <!-- CUSTOMIZE: Add your location -->
-            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+            <a href="#about">
                 <p class="text-sm mt-1">Economics & Computer Science Student @ Florida State University</p>
             </a>
             
             <nav class="flex flex-col space-y-3 mt-8">
-                <a href="#about" class="nav-link text-lg" onclick="showSection('about', this)">About</a>
-                <a href="#experience" class="nav-link text-lg" onclick="showSection('experience', this)">Experience</a>
-                <a href="#projects" class="nav-link text-lg" onclick="showSection('projects', this)">Projects</a>
-                <a href="#contact" class="nav-link text-lg" onclick="showSection('contact', this)">Contact</a>
+                <a href="#about" class="nav-link text-lg">About</a>
+                <a href="#experience" class="nav-link text-lg">Experience</a>
+                <a href="#projects" class="nav-link text-lg">Projects</a>
+                <a href="#contact" class="nav-link text-lg">Contact</a>
             </nav>
         </div>
          <footer class="absolute bottom-8 text-center text-xs text-gray-600">
@@ -79,12 +79,14 @@
         </footer>
     </aside>
 
+    <!-- Right Column: Main Content -->
     <main class="w-full md:w-2/3 lg:w-3/4 p-8 md:p-16 flex items-center justify-center h-full">
         
         <!-- About Section -->
         <section id="about">
             <div class="max-w-xl">
                  <h2 class="text-xl font-semibold mb-4 text-white">Currently</h2>
+                <!-- CUSTOMIZE: Your about me text -->
                  <div class="space-y-4 text-gray-300">
                      <p>
                         I am a rising junior at Florida State University double majoring in economics and computer science with a minor in Mandarin. I'm interested in bridging AI with the financial sector.      
@@ -106,13 +108,13 @@
                 <div class="space-y-6">
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 – Present</p>
-                        <h3 class="font-medium mt-1">Quantitative Trading Intern &mdash; Dynamic Capital Holdings</h3>
+                        <h3 class="font-medium mt-1">Quantitative Trading Intern &mdash; <a href="https://www.dynamiccapitalholdingsllc.com/">Dynamic Capital Holdings</a></h3>
                         <p class="text-sm mt-2">Dynamic Capital Holdings is the algo trading and advisory branch of Aegis Capital.</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 - Present</p>
                         <h3 class="font-medium mt-1">Undergraduate Research Assistant &mdash; FSU Responsible AI Research Lab</h3>
-                        <p class="text-sm mt-2">We are currently researching graph neural networks (GNNS).</p>
+                        <p class="text-sm mt-2">We are currently researching <a href="https://github.com/ryankosgit/Steal_GNN">graph neural networks (GNNS).</a></p>
                     </div>
                 </div>
             </div>
@@ -123,7 +125,6 @@
              <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-6 text-white">Projects</h2>
                  <div class="space-y-6">
-                    <!-- CUSTOMIZE: Add your project items here. -->
                     <div class="group">
                         <h3 class="font-medium">Turkish Auto Price Predictor</h3>
                         <p class="text-sm mt-1">Makes 2,000 price predictions with a 10,000,000 point qualitative & quantitative dataset with an average 87% accuracy in ~3 seconds.
@@ -152,27 +153,70 @@
     </main>
     
     <script>
-        // Function to switch between sections
-        function showSection(sectionId, element) {
+        /**
+         * Shows a specific section and highlights the corresponding navigation link.
+         * @param {string} sectionId - The ID of the section to show (e.g., 'about').
+         */
+        function showSection(sectionId) {
+            // Default to 'about' if the sectionId is invalid or empty
+            const idToShow = sectionId || 'about';
+            let sectionFound = false;
+
             // Hide all sections
             document.querySelectorAll('main section').forEach(section => {
-                section.classList.remove('active');
+                if(section.id === idToShow) {
+                    section.classList.add('active');
+                    sectionFound = true;
+                } else {
+                    section.classList.remove('active');
+                }
             });
-            // Show the target section
-            document.getElementById(sectionId).classList.add('active');
+
+            // If the requested section doesn't exist, show the 'about' section
+            if (!sectionFound) {
+                document.getElementById('about').classList.add('active');
+            }
 
             // Update active state on nav links
             document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
+                // Check if the link's href matches the section we are showing
+                const linkHref = link.getAttribute('href').substring(1);
+                if(linkHref === (sectionFound ? idToShow : 'about')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
-            element.classList.add('active');
         }
 
-        // Show the 'about' section by default on page load
-        window.onload = function() {
-            document.getElementById('about').classList.add('active');
-            document.querySelector('a[href="#about"]').classList.add('active');
-        };
+        // Add event listeners when the page content has loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            // Determine the initial section from the URL hash
+            const initialSectionId = window.location.hash.substring(1);
+            showSection(initialSectionId);
+
+            // Add click listeners to all internal anchor links in the entire document
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Get the section ID from the link's href
+                    const sectionId = this.getAttribute('href').substring(1);
+                    // Update the URL hash. This will also be caught by the popstate listener
+                    // for consistent history handling, but we call showSection immediately for faster UI response.
+                    window.location.hash = sectionId;
+                    showSection(sectionId);
+                    
+                    // Although the default action (changing hash) is what we want,
+                    // we prevent it to avoid a potential double-trigger or page jump in some browsers.
+                    e.preventDefault(); 
+                });
+            });
+            
+            // Listen for hash changes (e.g., from browser back/forward buttons)
+            window.addEventListener('popstate', () => {
+                const sectionIdOnPop = window.location.hash.substring(1);
+                showSection(sectionIdOnPop);
+            });
+        });
     </script>
 </body>
 </html>
