@@ -55,11 +55,17 @@
     <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center bg-[#111111] h-full">
         <div class="flex flex-col items-center">
             <!-- CUSTOMIZE: Add your headshot URL here -->
-            <img src="https://placehold.co/128x128/333333/e0e0e0?text=You" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
+            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+                <img src="https://placehold.co/128x128/333333/e0e0e0?text=You" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
+            </a>
             
-            <h1 class="text-2xl font-bold">Your Name</h1>
+            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+                <h1 class="text-2xl font-bold">Your Name</h1>
+            </a>
              <!-- CUSTOMIZE: Add your location -->
-            <p class="text-sm mt-1">Economics & Computer Science Student @ Florida State University</p>
+            <a href="#about" onclick="showSection('about', document.querySelector('nav a[href=\'#about\']'))">
+                <p class="text-sm mt-1">Economics & Computer Science Student @ Florida State University</p>
+            </a>
             
             <nav class="flex flex-col space-y-3 mt-8">
                 <a href="#about" class="nav-link text-lg" onclick="showSection('about', this)">About</a>
