@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- This tag tells search engines not to index this page -->
     <meta name="robots" content="noindex">
     <title>Ryan's Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Main body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
-            color: #a0a0a0; /* Softer default text color */
-            overflow: hidden; /* Prevent scrolling */
+            color: #a0a0a0; 
+            overflow: hidden; 
         }
 
         /* Make headings and links slightly more prominent */
@@ -38,39 +36,42 @@
             width: 100%;
         }
         
+        .small-text {
+            font-size: 0.8em;
+        }
+
         section.active {
-            display: block; /* Display the active section */
+            display: block;
         }
         
-        /* Fade-in animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 2; transform: translateY(0); }
         }
     </style>
 </head>
 <body class="w-screen h-screen flex">
 
-    <!-- Left Column: Header & Nav -->
     <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center bg-[#111111] h-full">
         <div class="flex flex-col items-center">
             <!-- CUSTOMIZE: Add your headshot URL here -->
             <a href="#about">
-                <img src="https://placehold.co/128x128/333333/e0e0e0?text=You" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
+                <img src="file:///Users/ryan./Desktop/unnamed.png" alt="Your Name" class="rounded-full w-30 h-24 mb-4 object-cover">
             </a>
             
             <a href="#about">
-                <h1 class="text-2xl font-bold">Your Name</h1>
+                <h1 class="text-2xl font-bold">Ryan Baiano</h1>
             </a>
-             <!-- CUSTOMIZE: Add your location -->
             <a href="#about">
-                <p class="text-sm mt-1">Economics & Computer Science Student @ Florida State University</p>
+                <p class="text-sm mt-1">Economics & Computer Science<br>@ Florida State University</p>
             </a>
             
             <nav class="flex flex-col space-y-3 mt-8">
                 <a href="#about" class="nav-link text-lg">About</a>
                 <a href="#experience" class="nav-link text-lg">Experience</a>
                 <a href="#projects" class="nav-link text-lg">Projects</a>
+                <!-- <a href="#education" class="nav-link text-lg">Education</a> -->
+                <a href="#languages" class="nav-link text-lg">Languages</a>
                 <a href="#contact" class="nav-link text-lg">Contact</a>
             </nav>
         </div>
@@ -89,13 +90,13 @@
                 <!-- CUSTOMIZE: Your about me text -->
                  <div class="space-y-4 text-gray-300">
                      <p>
-                        I am a rising junior at Florida State University double majoring in economics and computer science with a minor in Mandarin. I'm interested in bridging AI with the financial sector.      
+                        I am a rising junior at Florida State University double majoring in economics and computer science. I'm interested in bridging AI with the financial sector.      
                     </p>
                     <p>
-                        I am currently interning at Dynamic Capital Holdings as a quantitative trading intern and am a research assistant in FSU's Responsible AI Lab. We are focused on researching graph neural networks.
+                        I am currently interning at Dynamic Capital Holdings as a quantitative trading intern and am a research assistant in FSU's Responsible AI Lab.
                     </p>
-                     <p>
-                        Outside of my academics, I'm an avid music producer and boxer.
+                    <p>
+                        Some of my interests include boxing, music creation, and the Rubik's Cube.
                     </p>
                 </div>
             </div>
@@ -108,13 +109,38 @@
                 <div class="space-y-6">
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 – Present</p>
-                        <h3 class="font-medium mt-1">Quantitative Trading Intern &mdash; <a href="https://www.dynamiccapitalholdingsllc.com/" target="_blank" class="text-blue-400 hover:underline">Dynamic Capital Holdings</a></h3>
-                        <p class="text-sm mt-2">Dynamic Capital Holdings is the algo trading and advisory branch of Aegis Capital.</p>
+                        <h3 class="font-medium mt-1">Quantitative Trading Intern <a href="https://www.dynamiccapitalholdingsllc.com/" class="hover:underline small-text"><br>Dynamic Capital Holdings</a></h3>
+                        <p class="text-sm mt-1">Algorithmic equity trading and advisory firm</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 - Present</p>
-                        <h3 class="font-medium mt-1">Undergraduate Research Assistant &mdash; FSU Responsible AI Research Lab</h3>
-                        <p class="text-sm mt-2">We are currently researching <a href="https://github.com/ryankosgit/Steal_GNN" target="_blank" class="text-blue-400 hover:underline">graph neural networks (GNNS).</a></p>
+                        <h3 class="font-medium mt-1">Undergraduate Research Assistant <a class="small-text"> <br>FSU Responsible AI Research Lab</a></h3>
+                        <p class="text-sm mt-1">We are currently researching <a href="https://github.com/ryankosgit/Steal_GNN" class="hover:underline ">graph neural networks (GNNS)</a></p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">January 2025 – Present</p>
+                        <h3 class="font-medium mt-1">Academic Tutor <a class="small-text"> <br>Florida State University</a></h3>
+                        <p class="text-sm mt-1">Tutoring collegiate athletes in Statistics I and Calculus I</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">December 2024 – April 2025</p>
+                        <h3 class="font-medium mt-1">Product & Growth Intern<br><a class="small-text">Stitch</a></h3>
+                        <p class="text-sm mt-1">Educational startup that allows student to transform their notes into quizzes and other visual learning tools leveraging AI</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">October 2019 – May 2023</p>
+                        <h3 class="font-medium mt-1">Content Creator<br><a class="small-text">Self-Employed</a></h3>
+                        <p class="text-sm mt-1">I produced videos, music, and websites for local businesses</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">August 2021 – October 2022</p>
+                        <h3 class="font-medium mt-1">Retail Associate<br><a class="small-text">T.J. Maxx</a></h3>
+                        <p class="text-sm mt-1">Worked in inventory management and as a cashier processing frontend transactions</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-xs text-gray-500">January 2021 – April 2021</p>
+                        <h3 class="font-medium mt-1">Caretaker<br><a class="small-text">Self-Employed</a></h3>
+                        <p class="text-sm mt-1">Provided my elderly neighbor with caretaking and household chore services</p>
                     </div>
                 </div>
             </div>
@@ -126,15 +152,68 @@
                 <h2 class="text-xl font-semibold mb-6 text-white">Projects</h2>
                  <div class="space-y-6">
                     <div class="group">
-                        <h3 class="font-medium">Turkish Auto Price Predictor</h3>
-                        <p class="text-sm mt-1">Makes 2,000 price predictions with a 10,000,000 point qualitative & quantitative dataset with an average 87% accuracy in ~3 seconds.
-                        <a href="#" class="text-blue-400 hover:underline">GitHub &rarr;</a>
+                        <h3 class="font-medium">Turkish Auto Price Predictor<a class="text-sm mt-1"> • Python, Sci-kit Learn, Numpy, Pandas, yfinance</p></a></h3>
+                        <p class="text-sm mt-1">Machine learning price predictor model that conveys 2,000 price predictions sourced by a 10,000,000 point qualitative & quantitative dataset with an average 87%+ accuracy in ~3 seconds.
+                        <a href="https://github.com/ryankosgit/Turkish-Auto-Pricer" class="text-blue-400 hover:underline">GitHub &rarr; </a>
                         </p>
                     </div>
                      <div class="group">
-                        <h3 class="font-medium">Rubik's Cube Simulator</h3>
+                        <h3 class="font-medium">Rubik's Cube Simulator<a class="text-sm mt-1"> • C++</p></a></h3>
                         <p class="text-sm mt-1">Performs movements via official Rubik's Cube notation (ex: R B' U2) queried by the user and competition-legal scrambles using an algorithm I built that matches the official World Cube Assication's standards.
-                        <a href="#" class="text-blue-400 hover:underline">GitHub &rarr;</a>
+                        <a href="https://github.com/ryankosgit/RubiksCube" class="text-blue-400 hover:underline">GitHub &rarr;</a>
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h3 class="font-medium">ACG2021.AI<a class="text-sm mt-1"> • Amazon Web Services (AWS)</p></a></h3>
+                        <p class="text-sm mt-1">Large language model built and hosted AWS that explains financial accounting concepts in depth with examples; sourced by detailed notes and textbook resources, trained using Native Retriever
+                        </p>
+                 </div>
+            </div>
+        </section>
+
+                <!-- <section id="education">
+             <div class="max-w-xl">
+                <h2 class="text-xl font-semibold mb-6 text-white">Education</h2>
+                 <div class="space-y-6">
+                    <div class="group">
+                        <h3 class="font-medium">Florida State University <a class="text-sm mt-1"> • Tallahassee, FL</p></a></h3>
+                         <p class="text-sm mt-1">B.S Economics & Computer Science, minors in Mandarin Chinese & Business Finance
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h3 class="font-medium">American Heritage Schools<a class="text-sm mt-1"> • Delray Beach, FL</p></a></h3>
+                        <p class="text-sm mt-1">Theatre Technology - Lighting & Audio Engineering 90% Scholarship
+                 </p>
+        </section> -->
+
+        <section id="languages">
+             <div class="max-w-xl">
+                <h2 class="text-xl font-semibold mb-6 text-white">Foreign Languages</h2>
+                 <div class="space-y-6">
+                    <div class="group">
+                        <h3 class="font-medium">English <a class="text-sm mt-1"> • Native</p></a></h3>
+                         <p class="text-sm mt-1">English is my native and primary language. 
+
+                        </p>
+                    </div>
+                     <div class="group">
+                        <h3 class="font-medium">Mandarin Chinese<a class="text-sm mt-1"> • Fluent</p></a></h3>
+                        <p class="text-sm mt-1">I learned Mandarin through my coursework, but practice heavily outside of school. <br>My favorite class was Business Chinese at FSU, where I learned about banking systems, economics, and financial markets entirely in Mandarin. 
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h3 class="font-medium">Slovak/Czech<a class="text-sm mt-1"> • Conversational</p></a></h3>
+                        <p class="text-sm mt-1">My family is originally from Slovakia. <br> I learned through speaking at home with family.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h3 class="font-medium">Spanish<a class="text-sm mt-1"> • Intermediate</p></a></h3>
+                        <p class="text-sm mt-1">I took Spanish classes in middle school, but became adept in conversation by working at TJ Maxx and speaking with customers to resolve concerns and translate store policies.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h3 class="font-medium">French<a class="text-sm mt-1"> • Basic</p></a></h3>
+                        <p class="text-sm mt-1">I used to manage a social media promotion page for rising French music artists. 
                         </p>
                     </div>
                  </div>
@@ -146,23 +225,18 @@
             <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-4 text-white">Contact</h2>
                 <p class="text-sm">
-                    You can email me at <a href="mailto:youremail@example.com" class="text-blue-400 hover:underline">youremail@example.com</a>. I'm on <a href="#" class="text-blue-400 hover:underline">GitHub</a> and on <a href="#" class="text-blue-400 hover:underline">LinkedIn</a>.
+                    You can email me at <a href="mailto:ryan.k.baiano@gmail.com" class="text-blue-400 hover:underline">ryan.k.baiano@gmail.com</a>. I'm on <a href="https://github.com/ryankosgit" class="text-blue-400 hover:underline">GitHub</a> too.
                 </p>
             </div>
         </section>
     </main>
     
     <script>
-        /**
-         * Shows a specific section and highlights the corresponding navigation link.
-         * @param {string} sectionId - The ID of the section to show (e.g., 'about').
-         */
+    
         function showSection(sectionId) {
-            // Default to 'about' if the sectionId is invalid or empty
             const idToShow = sectionId || 'about';
             let sectionFound = false;
 
-            // Hide all sections
             document.querySelectorAll('main section').forEach(section => {
                 if(section.id === idToShow) {
                     section.classList.add('active');
@@ -172,14 +246,11 @@
                 }
             });
 
-            // If the requested section doesn't exist, show the 'about' section
             if (!sectionFound) {
                 document.getElementById('about').classList.add('active');
             }
 
-            // Update active state on nav links
             document.querySelectorAll('.nav-link').forEach(link => {
-                // Check if the link's href matches the section we are showing
                 const linkHref = link.getAttribute('href').substring(1);
                 if(linkHref === (sectionFound ? idToShow : 'about')) {
                     link.classList.add('active');
@@ -189,29 +260,23 @@
             });
         }
 
-        // Add event listeners when the page content has loaded
+
         window.addEventListener('DOMContentLoaded', () => {
-            // Determine the initial section from the URL hash
+
             const initialSectionId = window.location.hash.substring(1);
             showSection(initialSectionId);
 
-            // Add click listeners to all internal anchor links in the entire document
+
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    // Get the section ID from the link's href
+
                     const sectionId = this.getAttribute('href').substring(1);
-                    // Update the URL hash. This will also be caught by the popstate listener
-                    // for consistent history handling, but we call showSection immediately for faster UI response.
                     window.location.hash = sectionId;
                     showSection(sectionId);
-                    
-                    // Although the default action (changing hash) is what we want,
-                    // we prevent it to avoid a potential double-trigger or page jump in some browsers.
                     e.preventDefault(); 
                 });
             });
             
-            // Listen for hash changes (e.g., from browser back/forward buttons)
             window.addEventListener('popstate', () => {
                 const sectionIdOnPop = window.location.hash.substring(1);
                 showSection(sectionIdOnPop);
