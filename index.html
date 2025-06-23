@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This tag tells search engines not to index this page -->
     <meta name="robots" content="noindex">
     <title>Your Name - Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Main body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
-            color: #a0a0a0; 
-            overflow: hidden; 
+            color: #a0a0a0; /* Softer default text color */
+            overflow: hidden; /* Prevent scrolling */
         }
 
+        /* Make headings and links slightly more prominent */
         h1, h2, h3, a {
             color: #e0e0e0;
         }
         
+        /* Style for the active navigation link */
         .nav-link {
             transition: color 0.3s;
         }
@@ -27,7 +31,7 @@
             color: #ffffff;
         }
         
-
+        /* Section transitions */
         section {
             display: none; /* Hide all sections by default */
             animation: fadeIn 0.5s ease-in-out;
@@ -78,8 +82,8 @@
                  <h2 class="text-xl font-semibold mb-4 text-white">Currently</h2>
                 <!-- CUSTOMIZE: Your about me text -->
                  <div class="space-y-4 text-gray-300">
-                    <p>
-                        I am a rising junior at Florida State University double majoring in economics and computer science with a minor in Mandarin. I'm interested in bridging AI with the financial sector.  
+                     <p>
+                        I am a rising junior at Florida State University double majoring in economics and computer science with a minor in Mandarin. I'm interested in bridging AI with the financial sector.      
                     </p>
                     <p>
                         I am currently interning at Dynamic Capital Holdings as a quantitative trading intern and am a research assistant in FSU's Responsible AI Lab. We are focused on researching graph neural networks.
@@ -92,6 +96,7 @@
         </section>
 
         <!-- Experience Section -->
+        <section id="experience">
             <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-6 text-white">Experience</h2>
                 <div class="space-y-6">
