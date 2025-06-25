@@ -12,7 +12,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
             color: #a0a0a0; 
-            overflow: hidden; 
+            overflow: scroll; 
         }
 
         /* Make headings and links slightly more prominent */
@@ -47,6 +47,11 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 2; transform: translateY(0); }
+        }
+
+        /* Optional: smooth scroll for a nicer effect */
+        .experience-scroll {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -104,45 +109,75 @@
 
         <!-- Experience Section -->
         <section id="experience">
-            <div class="max-w-xl">
+            <div class="max-w-xl relative">
                 <h2 class="text-xl font-semibold mb-6 text-white">Experience</h2>
-                <div class="space-y-6">
+                <div id="exp-scroll" class="space-y-6 max-h-[33rem] overflow-y-auto pr-2 pb-24 relative experience-scroll">
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 – Present</p>
-                        <h3 class="font-medium mt-1">Quantitative Trading Intern <a href="https://www.dynamiccapitalholdingsllc.com/" class="hover:underline small-text"><br>Dynamic Capital Holdings</a></h3>
+                        <h3 class="font-medium mt-1">
+                            Quantitative Trading Intern
+                            <a href="https://www.dynamiccapitalholdingsllc.com/" class="hover:underline small-text">
+                                <br>Dynamic Capital Holdings
+                            </a>
+                        </h3>
                         <p class="text-sm mt-1">Algorithmic equity trading and advisory firm</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 - Present</p>
-                        <h3 class="font-medium mt-1">Undergraduate Research Assistant <a class="small-text"> <br>FSU Responsible AI Research Lab</a></h3>
-                        <p class="text-sm mt-1">We are currently researching <a href="https://github.com/ryankosgit/Steal_GNN" class="hover:underline ">graph neural networks (GNNS)</a></p>
+                        <h3 class="font-medium mt-1">
+                            Undergraduate Research Assistant
+                            <a class="small-text"><br>FSU Responsible AI Research Lab</a>
+                        </h3>
+                        <p class="text-sm mt-1">
+                            We are currently researching
+                            <a href="https://github.com/ryankosgit/Steal_GNN" class="hover:underline">graph neural networks (GNNS)</a>
+                        </p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">January 2025 – Present</p>
-                        <h3 class="font-medium mt-1">Academic Tutor <a class="small-text"> <br>Florida State University</a></h3>
+                        <h3 class="font-medium mt-1">
+                            Academic Tutor
+                            <a class="small-text"><br>Florida State University</a>
+                        </h3>
                         <p class="text-sm mt-1">Tutoring collegiate athletes in Statistics I and Calculus I</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">December 2024 – April 2025</p>
-                        <h3 class="font-medium mt-1">Product & Growth Intern<br><a class="small-text">Stitch</a></h3>
-                        <p class="text-sm mt-1">Educational startup that allows student to transform their notes into quizzes and other visual learning tools leveraging AI</p>
+                        <h3 class="font-medium mt-1">
+                            Product & Growth Intern
+                            <a class="small-text"><br>Stitch</a>
+                        </h3>
+                        <p class="text-sm mt-1">
+                            Educational startup that allows students to transform their notes into quizzes and other visual learning tools leveraging AI
+                        </p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">October 2019 – May 2023</p>
-                        <h3 class="font-medium mt-1">Content Creator<br><a class="small-text">Self-Employed</a></h3>
+                        <h3 class="font-medium mt-1">
+                            Freelance Content Creator
+                            <a class="small-text"><br>Self-Employed</a>
+                        </h3>
                         <p class="text-sm mt-1">I produced videos, music, and websites for local businesses</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">August 2021 – October 2022</p>
-                        <h3 class="font-medium mt-1">Retail Associate<br><a class="small-text">T.J. Maxx</a></h3>
+                        <h3 class="font-medium mt-1">
+                            Retail Associate
+                            <a class="small-text"><br>T.J. Maxx</a>
+                        </h3>
                         <p class="text-sm mt-1">Worked in inventory management and as a cashier processing frontend transactions</p>
                     </div>
                     <div class="group">
                         <p class="text-xs text-gray-500">January 2021 – April 2021</p>
-                        <h3 class="font-medium mt-1">Caretaker<br><a class="small-text">Self-Employed</a></h3>
+                        <h3 class="font-medium mt-1">
+                            Caretaker
+                            <a class="small-text"><br>Self-Employed</a>
+                        </h3>
                         <p class="text-sm mt-1">Provided my elderly neighbor with caretaking and household chore services</p>
                     </div>
                 </div>
+                <!-- Gradient overlay at the bottom -->
+                <div id="exp-gradient" class="pointer-events-none absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#1a1a1a] to-transparent transition-opacity duration-300"></div>
             </div>
         </section>
 
@@ -198,17 +233,17 @@
                     </div>
                      <div class="group">
                         <h3 class="font-medium">Mandarin Chinese<a class="text-sm mt-1"> • Fluent</p></a></h3>
-                        <p class="text-sm mt-1">I learned Mandarin through my coursework, but practice heavily outside of school. <br>My favorite class was Business Chinese at FSU, where I learned about banking systems, economics, and financial markets entirely in Mandarin. 
+                        <p class="text-sm mt-1">I learned Mandarin through my coursework and speaking with friends. 
                         </p>
                     </div>
                     <div class="group">
                         <h3 class="font-medium">Slovak/Czech<a class="text-sm mt-1"> • Conversational</p></a></h3>
-                        <p class="text-sm mt-1">My family is originally from Slovakia. <br> I learned through speaking at home with family.
+                        <p class="text-sm mt-1">My family is originally from Slovakia.
                         </p>
                     </div>
                     <div class="group">
                         <h3 class="font-medium">Spanish<a class="text-sm mt-1"> • Intermediate</p></a></h3>
-                        <p class="text-sm mt-1">I took Spanish classes in middle school, but became adept in conversation by working at TJ Maxx and speaking with customers to resolve concerns and translate store policies.
+                        <p class="text-sm mt-1">I became adept in Spanish by working at TJ Maxx and speaking with customers to resolve concerns and translate store policies.
                         </p>
                     </div>
                     <div class="group">
