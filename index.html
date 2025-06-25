@@ -11,15 +11,15 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
-            color: #a0a0a0; 
-            overflow: scroll; 
+            color: #a0a0a0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         /* Make headings and links slightly more prominent */
         h1, h2, h3, a {
             color: #e0e0e0;
         }
-        
+
         /* Style for the active navigation link */
         .nav-link {
             transition: color 0.3s;
@@ -28,14 +28,14 @@
         .nav-link:hover {
             color: #ffffff;
         }
-        
+
         /* Section transitions */
         section {
             display: none; /* Hide all sections by default */
             animation: fadeIn 0.5s ease-in-out;
             width: 100%;
         }
-        
+
         .small-text {
             font-size: 0.8em;
         }
@@ -43,10 +43,10 @@
         section.active {
             display: block;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 2; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Optional: smooth scroll for a nicer effect */
@@ -55,47 +55,42 @@
         }
     </style>
 </head>
-<body class="w-screen h-screen flex">
+<body class="w-screen min-h-screen flex flex-col md:flex-row">
 
-    <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center bg-[#111111] h-full">
+    <aside class="w-full md:w-1/3 lg:w-1/4 p-8 flex flex-col justify-center items-center text-center md:h-screen md:sticky top-0 bg-[#111111]">
         <div class="flex flex-col items-center">
-            <!-- CUSTOMIZE: Add your headshot URL here -->
             <a href="#about">
-                <img src="file:///Users/ryan./Desktop/unnamed.png" alt="Your Name" class="rounded-full w-30 h-24 mb-4 object-cover">
+                <img src="file:///Users/ryan./Desktop/unnamed.png" alt="Your Name" class="rounded-full w-24 h-24 mb-4 object-cover">
             </a>
-            
+
             <a href="#about">
                 <h1 class="text-2xl font-bold">Ryan Baiano</h1>
             </a>
             <a href="#about">
                 <p class="text-sm mt-1">Economics & Computer Science<br>@ Florida State University</p>
             </a>
-            
+
             <nav class="flex flex-col space-y-3 mt-8">
                 <a href="#about" class="nav-link text-lg">About</a>
                 <a href="#experience" class="nav-link text-lg">Experience</a>
                 <a href="#projects" class="nav-link text-lg">Projects</a>
-                <!-- <a href="#education" class="nav-link text-lg">Education</a> -->
                 <a href="#languages" class="nav-link text-lg">Languages</a>
                 <a href="#contact" class="nav-link text-lg">Contact</a>
             </nav>
         </div>
-         <footer class="absolute bottom-8 text-center text-xs text-gray-600">
+         <footer class="mt-8 md:absolute md:bottom-8 text-center text-xs text-gray-600">
             <p>&copy; Ryan</p>
         </footer>
     </aside>
 
-    <!-- Right Column: Main Content -->
-    <main class="w-full md:w-2/3 lg:w-3/4 p-8 md:p-16 flex items-center justify-center h-full">
-        
-        <!-- About Section -->
+    <main class="w-full md:w-2/3 lg:w-3/4 p-8 md:p-16 flex items-center justify-center">
+
         <section id="about">
             <div class="max-w-xl">
                  <h2 class="text-xl font-semibold mb-4 text-white">Currently</h2>
-                <!-- CUSTOMIZE: Your about me text -->
-                 <div class="space-y-4 text-gray-300">
+                <div class="space-y-4 text-gray-300">
                      <p>
-                        I am a rising junior at Florida State University double majoring in economics and computer science. I'm interested in bridging AI with the financial sector.      
+                        I am a rising junior at Florida State University pursuing a double major in economics and computer science.
                     </p>
                     <p>
                         I am currently interning at Dynamic Capital Holdings as a quantitative trading intern and am a research assistant in FSU's Responsible AI Lab.
@@ -107,11 +102,10 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience">
             <div class="max-w-xl relative">
                 <h2 class="text-xl font-semibold mb-6 text-white">Experience</h2>
-                <div id="exp-scroll" class="space-y-6 max-h-[33rem] overflow-y-auto pr-2 pb-24 relative experience-scroll">
+                <div id="exp-scroll" class="space-y-6 max-h-[70vh] md:max-h-[33rem] overflow-y-auto pr-2 pb-24 relative experience-scroll">
                     <div class="group">
                         <p class="text-xs text-gray-500">May 2025 – Present</p>
                         <h3 class="font-medium mt-1">
@@ -176,86 +170,68 @@
                         <p class="text-sm mt-1">Provided my elderly neighbor with caretaking and household chore services</p>
                     </div>
                 </div>
-                <!-- Gradient overlay at the bottom -->
                 <div id="exp-gradient" class="pointer-events-none absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#1a1a1a] to-transparent transition-opacity duration-300"></div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects">
              <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-6 text-white">Projects</h2>
                  <div class="space-y-6">
                     <div class="group">
-                        <h3 class="font-medium">Turkish Auto Price Predictor<a class="text-sm mt-1"> • Python, Sci-kit Learn, Numpy, Pandas, yfinance</p></a></h3>
+                        <h3 class="font-medium">Turkish Auto Price Predictor<a class="text-sm mt-1"> • Python, Sci-kit Learn, Numpy, Pandas, yfinance</a></h3>
                         <p class="text-sm mt-1">Machine learning price predictor model that conveys 2,000 price predictions sourced by a 10,000,000 point qualitative & quantitative dataset with an average 87%+ accuracy in ~3 seconds.
                         <a href="https://github.com/ryankosgit/Turkish-Auto-Pricer" class="text-blue-400 hover:underline">GitHub &rarr; </a>
                         </p>
                     </div>
                      <div class="group">
-                        <h3 class="font-medium">Rubik's Cube Simulator<a class="text-sm mt-1"> • C++</p></a></h3>
+                        <h3 class="font-medium">Rubik's Cube Simulator<a class="text-sm mt-1"> • C++</a></h3>
                         <p class="text-sm mt-1">Performs movements via official Rubik's Cube notation (ex: R B' U2) queried by the user and competition-legal scrambles using an algorithm I built that matches the official World Cube Assication's standards.
                         <a href="https://github.com/ryankosgit/RubiksCube" class="text-blue-400 hover:underline">GitHub &rarr;</a>
                         </p>
                     </div>
                     <div class="group">
-                        <h3 class="font-medium">ACG2021.AI<a class="text-sm mt-1"> • Amazon Web Services (AWS)</p></a></h3>
+                        <h3 class="font-medium">ACG2021.AI<a class="text-sm mt-1"> • Amazon Web Services (AWS)</a></h3>
                         <p class="text-sm mt-1">Large language model built and hosted AWS that explains financial accounting concepts in depth with examples; sourced by detailed notes and textbook resources, trained using Native Retriever
                         </p>
                  </div>
             </div>
         </section>
 
-                <!-- <section id="education">
-             <div class="max-w-xl">
-                <h2 class="text-xl font-semibold mb-6 text-white">Education</h2>
-                 <div class="space-y-6">
-                    <div class="group">
-                        <h3 class="font-medium">Florida State University <a class="text-sm mt-1"> • Tallahassee, FL</p></a></h3>
-                         <p class="text-sm mt-1">B.S Economics & Computer Science, minors in Mandarin Chinese & Business Finance
-                        </p>
-                    </div>
-                    <div class="group">
-                        <h3 class="font-medium">American Heritage Schools<a class="text-sm mt-1"> • Delray Beach, FL</p></a></h3>
-                        <p class="text-sm mt-1">Theatre Technology - Lighting & Audio Engineering 90% Scholarship
-                 </p>
-        </section> -->
-
-        <section id="languages">
+                <section id="languages">
              <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-6 text-white">Foreign Languages</h2>
                  <div class="space-y-6">
                     <div class="group">
-                        <h3 class="font-medium">English <a class="text-sm mt-1"> • Native</p></a></h3>
-                         <p class="text-sm mt-1">English is my native and primary language. 
+                        <h3 class="font-medium">English <a class="text-sm mt-1"> • Native</a></h3>
+                         <p class="text-sm mt-1">English is my native and primary language.
 
                         </p>
                     </div>
                      <div class="group">
-                        <h3 class="font-medium">Mandarin Chinese<a class="text-sm mt-1"> • Fluent</p></a></h3>
-                        <p class="text-sm mt-1">I learned Mandarin through my coursework and speaking with friends. 
+                        <h3 class="font-medium">Mandarin Chinese<a class="text-sm mt-1"> • Fluent</a></h3>
+                        <p class="text-sm mt-1">I learned Mandarin through my coursework and speaking with friends.
                         </p>
                     </div>
                     <div class="group">
-                        <h3 class="font-medium">Slovak/Czech<a class="text-sm mt-1"> • Conversational</p></a></h3>
+                        <h3 class="font-medium">Slovak/Czech<a class="text-sm mt-1"> • Conversational</a></h3>
                         <p class="text-sm mt-1">My family is originally from Slovakia.
                         </p>
                     </div>
                     <div class="group">
-                        <h3 class="font-medium">Spanish<a class="text-sm mt-1"> • Intermediate</p></a></h3>
+                        <h3 class="font-medium">Spanish<a class="text-sm mt-1"> • Intermediate</a></h3>
                         <p class="text-sm mt-1">I became adept in Spanish by working at TJ Maxx and speaking with customers to resolve concerns and translate store policies.
                         </p>
                     </div>
                     <div class="group">
-                        <h3 class="font-medium">French<a class="text-sm mt-1"> • Basic</p></a></h3>
-                        <p class="text-sm mt-1">I used to manage a social media promotion page for rising French music artists. 
+                        <h3 class="font-medium">French<a class="text-sm mt-1"> • Basic</a></h3>
+                        <p class="text-sm mt-1">I used to manage a social media promotion page for rising French music artists.
                         </p>
                     </div>
                  </div>
             </div>
         </section>
-        
-        <!-- Contact Section -->
+
         <section id="contact">
             <div class="max-w-xl">
                 <h2 class="text-xl font-semibold mb-4 text-white">Contact</h2>
@@ -265,9 +241,9 @@
             </div>
         </section>
     </main>
-    
+
     <script>
-    
+
         function showSection(sectionId) {
             const idToShow = sectionId || 'about';
             let sectionFound = false;
@@ -308,10 +284,10 @@
                     const sectionId = this.getAttribute('href').substring(1);
                     window.location.hash = sectionId;
                     showSection(sectionId);
-                    e.preventDefault(); 
+                    e.preventDefault();
                 });
             });
-            
+
             window.addEventListener('popstate', () => {
                 const sectionIdOnPop = window.location.hash.substring(1);
                 showSection(sectionIdOnPop);
